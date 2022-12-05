@@ -118,8 +118,6 @@ const inputNewEmployee = () => {
     });
 };
 
-// function for an intern to create new object of the intern class and generate intern HTML
-
 function generateInternHTML() {
     inquirer.prompt(internQuestions)
         .then(internData => {
@@ -133,11 +131,9 @@ function generateInternHTML() {
                 writeFile(Employee.array);
             }
         }
-            //  let internEmployee = new Intern(name, id, email, gitHub);
+
         )
 };
-
-// function for an engineer to create new object of the intern class and generate intern HTML
 
 function generateEngineerHTML() {
     inquirer.prompt(engineerQuestions)
@@ -152,7 +148,6 @@ function generateEngineerHTML() {
                 writeFile(Employee.array);
             }
         }
-            //  let internEmployee = new Intern(name, id, email, gitHub);
         )
 };
 
@@ -167,7 +162,6 @@ function initialQuestions() {
             // console.log(employee);
 
             inputNewEmployee();
-
         }
         )
 }

@@ -1,6 +1,38 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 h1 {
     width: 100%;
     margin: auto;
     height: 130px;
     background-color: #3d5a80;
+    font-size: 26px;
+    color: #98c1d9;
+    padding: 50px 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.manager-container {
+    width: 300px;
+    margin: 50px auto;
+}
+
+.manager-info {
+    background-color: #d0e3ee;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.engineer-info {
+    background-color: #c3f6c3;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intern-info {
+    background-color: #ffd7b5;
+    text-align: center;
+    margin-bottom: 15px;
 }
