@@ -1,17 +1,16 @@
-const fs = require('fs');
+const fs = require("fs");
 
 const writeFile = (content) => {
     const HTML = generateHTML(content);
-    fs.writeFile('./dist/index.html', HTML, err => {
+    fs.writeFile("./dist/index.html", HTML, (err) => {
         if (err) {
             console.log(err);
             return;
         } else {
-            console.log('Your team profile is successfully Created!');
+            console.log("Your team profile is successfully Created!");
         }
     });
 };
-
 const generateHTML = (data) =>
     `<!DOCTYPE html>
 <html lang="en">
@@ -31,22 +30,35 @@ const generateHTML = (data) =>
     <header>
         <h1>Team Profile</h1>
     </header>   
-    <div class="manager-container">
-    ${data.map((item) => (`<div class="card-header" style="width: 18rem;">
-    <div class="card-header">
-        ${item.role}<i class="${item.role === 'Manager' ? `fab fa-black-tie` : item.role === 'Engineer' ? `fas fa-chalkboard-teacher` : `fas fa-baby`}"></i>
-        </span>
+    <div class="container-fluid">
+    <div class="row">
+    ${data.map(
+        (item) => `<div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">
+        ${item.role} <i class="${item.role === "Manager"
+                ? `fas fa-user-tie`
+                : item.role === "Engineer"
+                    ? `fas fa-user-circle`
+                    : `fas fa-user-graduate`
+            }"></i>
+        </h5>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Name:${item.name}</li>
-        <li class="list-group-item">Employee ID:${item.id}</li>
-        <li class="list-group-item">${item.role === 'Manager' ? `Office Number: ${item.officeNumber}` : item.role === 'Engineer' ? `GitHub Username: ${item.gitHub}` : `School Name: ${item.school}`}</li>
-        <li class="list-group-item">Email:<a href="mailto:${item.email}">${item.email}</a></li>
+    <ul class="list-group">
+        <li class="list-group-item">Name: ${item.name}</li>
+        <li class="list-group-item">Employee ID: ${item.id}</li>
+        <li class="list-group-item">${item.role === "Manager"
+                ? `Office Number: ${item.officeNumber}`
+                : item.role === "Engineer"
+                    ? `GitHub Username: <a href="www.github.com">${item.gitHub}</a>`
+                    : `School Name: ${item.school}`
+            }</li>
+        <li class="list-group-item">Email: <a href="mailto:${item.email}">${item.email
+            }</a></li>
     </ul>
 </div>`
-
-    ))}
-    </div> 
+    )}
+    </div>
     <!-- Script -->
     <script src=" https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -56,6 +68,6 @@ const generateHTML = (data) =>
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
-</html>`
+</html>`;
 
 module.exports = writeFile;
