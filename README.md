@@ -34,6 +34,8 @@ GitHub Repository: https://github.com/krgurevich/blue-planet-team
 
 Google Drive Link: https://drive.google.com/file/d/1d8hUww347Bbcz3uJjz2R-KV20pbpzMec/view?usp=sharing
 
+Generated HTML Link: https://github.com/krgurevich/blue-planet-team/blob/main/dist/index.html
+
 ## Screenshot
 
 ![website screenshot](./assets/screencapture.png)

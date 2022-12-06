@@ -1,16 +1,16 @@
 const employeeTest = require(`../lib/Employee`);
 
-test('should not be null', () => {
+test('name should not be null', () => {
     const name = [];
     expect(name).not.toBeNull();
 });
 
-test('should not be null', () => {
+test('id should not be null', () => {
     const id = [];
     expect(id).not.toBeNull();
 });
 
-test('should not be null', () => {
+test('email should not be null', () => {
     const email = [];
     expect(email).not.toBeNull();
 });

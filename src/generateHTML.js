@@ -1,5 +1,6 @@
 const fs = require("fs");
 
+// creating HTML
 const writeFile = (content) => {
     const HTML = generateHTML(content);
     fs.writeFile("./dist/index.html", HTML, (err) => {
@@ -11,6 +12,7 @@ const writeFile = (content) => {
         }
     });
 };
+// Generates Card 
 const generateCard = (data) => {
     let card =
         data.map(
@@ -43,6 +45,7 @@ const generateCard = (data) => {
     return card.join('');
 }
 
+// Generates HTML code
 const generateHTML = (data) =>
     `<!DOCTYPE html>
 <html lang="en">
