@@ -14,25 +14,11 @@ h1 {
     font-weight: bold;
 }
 
-.manager-container {
-    width: 300px;
+.container-fluid {
     margin: 50px auto;
 }
 
-.manager-info {
+.card {
+    margin: auto;
     background-color: #d0e3ee;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.engineer-info {
-    background-color: #c3f6c3;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.intern-info {
-    background-color: #ffd7b5;
-    text-align: center;
-    margin-bottom: 15px;
 }

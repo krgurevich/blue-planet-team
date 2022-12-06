@@ -9,30 +9,59 @@ const Employee = require("./lib/Employee");
 
 const writeFile = require("./src/generateHTML");
 
-// array of team profiles
-const employeeArray = [];
-
 // Collects user's input to to build team profile
 const managerQuestions = [
     {
         type: "input",
         name: "name",
         message: "Please provide the name of the team manager -",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log(' Please enter the name of the employee!');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "id",
         message: "Please enter the manager's employee ID -",
+        validate: idInput => {
+            if (idInput) {
+                return true;
+            } else {
+                console.log(' Please enter the employee ID!');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "email",
         message: "Please provide the manager's email address -",
+        validate: emailInput => {
+            if (emailInput.includes('@')) {
+                return true;
+            } else {
+                console.log(' Please enter a valid email address!');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "officeNumber",
         message: "Please provide the office number -",
+        validate: officeNumberInput => {
+            if (officeNumberInput) {
+                return true;
+            } else {
+                console.log(' Please enter the office number!');
+                return false;
+            }
+        }
     },
 ];
 
@@ -50,21 +79,53 @@ let internQuestions = [
         type: "input",
         name: "name",
         message: "Please enter the name of the intern -",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log(' Please enter the name of this employee!');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "id",
         message: "Please enter the intern's employee ID -",
+        validate: idInput => {
+            if (idInput) {
+                return true;
+            } else {
+                console.log(' Please enter the employee ID!');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "email",
         message: "Please provide the intern's email address -",
+        validate: emailInput => {
+            if (emailInput.includes('@')) {
+                return true;
+            } else {
+                console.log(' Please enter a valid email address!');
+                return false;
+            }
+        }
     },
     {
         input: "input",
         name: "school",
         message: "Please provide the school name of the Intern",
+        validate: schoolInput => {
+            if (schoolInput) {
+                return true;
+            } else {
+                console.log(' Please enter the school name!');
+                return false;
+            }
+        }
     },
     {
         type: "confirm",
@@ -80,21 +141,53 @@ let engineerQuestions = [
         type: "input",
         name: "name",
         message: "Please enter the name of the Engineer -",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log(' Please enter the name of this employee!');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "id",
         message: "Please enter the engineer's ID -",
+        validate: idInput => {
+            if (idInput) {
+                return true;
+            } else {
+                console.log(' Please enter the employee ID!');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "email",
         message: "Please provide the engineer's email address -",
+        validate: emailInput => {
+            if (emailInput.includes('@')) {
+                return true;
+            } else {
+                console.log(' Please enter a valid email address!');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "gitHub",
         message: "Please provide the GitHub username of the Engineer",
+        validate: gitHubInput => {
+            if (gitHubInput) {
+                return true;
+            } else {
+                console.log(' Please enter the GitHub username!!');
+                return false;
+            }
+        }
     },
     {
         type: "confirm",

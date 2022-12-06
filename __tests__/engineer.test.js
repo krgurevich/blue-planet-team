@@ -1,5 +1,6 @@
-const engineerTest = require(`./lib/Engineer`);
+const engineerTest = require(`../lib/Engineer`);
 
-test('Should be Engineer in Manager data', () => {
-    expect(role).toContain('Engineer');
-})
+test('should not be null', () => {
+    const gitHub = [];
+    expect(gitHub).not.toBeNull();
+});

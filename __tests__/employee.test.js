@@ -1,5 +1,16 @@
-const managerTest = require(`./lib/Employee`);
+const employeeTest = require(`../lib/Employee`);
 
-test('There should be Manager in employee data', () => {
-    expect(role).toContain('Manager');
-})
+test('should not be null', () => {
+    const name = [];
+    expect(name).not.toBeNull();
+});
+
+test('should not be null', () => {
+    const id = [];
+    expect(id).not.toBeNull();
+});
+
+test('should not be null', () => {
+    const email = [];
+    expect(email).not.toBeNull();
+});

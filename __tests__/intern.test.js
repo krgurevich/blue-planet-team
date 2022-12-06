@@ -1,5 +1,6 @@
-const internTest = require(`./lib/Intern`);
+const internTest = require(`../lib/Intern`);
 
-test('Should be Intern in Manager data', () => {
-    expect(role).toContain('Intern');
-})
+test('should not be null', () => {
+    const school = [];
+    expect(school).not.toBeNull();
+});
