@@ -9,7 +9,7 @@ const Employee = require("./lib/Employee");
 
 const writeFile = require("./src/generateHTML");
 
-// Collects user's input to to build team profile
+// Manager's input with validations
 const managerQuestions = [
     {
         type: "input",
@@ -65,6 +65,7 @@ const managerQuestions = [
     },
 ];
 
+// Prompts for next input role selection
 let inputNewEmpQuestions = [
     {
         type: "list",
@@ -74,6 +75,7 @@ let inputNewEmpQuestions = [
     },
 ];
 
+// Intern questions with validations
 let internQuestions = [
     {
         type: "input",
@@ -117,7 +119,7 @@ let internQuestions = [
     {
         input: "input",
         name: "school",
-        message: "Please provide the school name of the Intern",
+        message: "Please provide the school name of the Intern -",
         validate: schoolInput => {
             if (schoolInput) {
                 return true;
@@ -135,7 +137,7 @@ let internQuestions = [
     },
 ];
 
-// engineerQuestions
+// Engineer questions with validations
 let engineerQuestions = [
     {
         type: "input",
@@ -179,7 +181,7 @@ let engineerQuestions = [
     {
         type: "input",
         name: "gitHub",
-        message: "Please provide the GitHub username of the Engineer",
+        message: "Please provide the GitHub username of the Engineer -",
         validate: gitHubInput => {
             if (gitHubInput) {
                 return true;
@@ -197,6 +199,7 @@ let engineerQuestions = [
     },
 ];
 
+// Prompts for new selection
 const inputNewEmployee = () => {
     console.log(`- Please enter new record - `);
     inquirer.prompt(inputNewEmpQuestions).then((selectedOption) => {
@@ -212,6 +215,7 @@ const inputNewEmployee = () => {
     });
 };
 
+// Generates intern content
 function generateInternHTML() {
     inquirer.prompt(internQuestions).then((internData) => {
         // console.log(internData);
@@ -226,6 +230,7 @@ function generateInternHTML() {
     });
 }
 
+// Generates engineer content
 function generateEngineerHTML() {
     inquirer.prompt(engineerQuestions).then((engineerData) => {
         // console.log(engineerData);
@@ -240,6 +245,7 @@ function generateEngineerHTML() {
     });
 }
 
+// Initial Manager content
 function initialQuestions() {
     inquirer.prompt(managerQuestions).then((employeeData) => {
         // console.log(employeeData);

@@ -17,7 +17,7 @@ const generateCard = (data) => {
             (item) => `<div class="card" style="width: 18rem;">
             <div class="card-body">
             <h5 class="card-title">
-        ${item.role} <i class="${item.role === "Manager"
+        ${item.name} <i class="${item.role === "Manager"
                     ? `fas fa-user-tie`
                     : item.role === "Engineer"
                         ? `fas fa-user-circle`
@@ -26,7 +26,7 @@ const generateCard = (data) => {
         </h5>
     </div>
     <ul class="list-group">
-        <li class="list-group-item">Name: ${item.name}</li>
+        <li class="list-group-item">Position: ${item.role}</li>
         <li class="list-group-item">Employee ID: ${item.id}</li>
         <li class="list-group-item">${item.role === "Manager"
                     ? `Office Number: ${item.officeNumber}`
